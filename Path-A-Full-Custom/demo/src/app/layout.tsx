@@ -4,6 +4,9 @@ import "swiper/swiper-bundle.css";
 import "simplebar-react/dist/simplebar.min.css";
 import { ClientProviders } from "@/components/providers/ClientProviders";
 
+// Disable static generation for all routes to prevent clientReferenceManifest errors
+export const dynamic = 'force-dynamic';
+
 const outfit = Outfit({
   subsets: ["latin"],
 });
