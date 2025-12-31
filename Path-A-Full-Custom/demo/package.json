@@ -2,6 +2,9 @@
   "name": "tailadmin-next-typescript-pro",
   "version": "2.2.1",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next dev ",
     "build": "next build ",
