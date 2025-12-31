@@ -4,7 +4,7 @@ import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { SelectionBoard, BoardItem, Product, BoardComment, statusColors, statusLabels } from '@/types/selection-board';
+import { SelectionBoard, BoardItem, Product, statusColors, statusLabels } from '@/types/selection-board';
 import BoardCanvas from './BoardCanvas';
 import BoardComments from './BoardComments';
 import ProductSidebar from './ProductSidebar';

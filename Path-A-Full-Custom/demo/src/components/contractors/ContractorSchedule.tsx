@@ -36,7 +36,8 @@ export function ContractorSchedule({ entries, onAddJob }: ContractorScheduleProp
   };
 
   const upcomingEntries = entries.filter(entry => new Date(entry.date) >= new Date());
-  const pastEntries = entries.filter(entry => new Date(entry.date) < new Date());
+  const _pastEntries = entries.filter(entry => new Date(entry.date) < new Date());
+  void _pastEntries; // Reserved for future use
 
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 dark:bg-gray-900 dark:border-gray-800">

@@ -35,13 +35,14 @@ function StatusBadge({ status }: { status: 'pending' | 'approved' | 'paid' }) {
 }
 
 export function TimesheetView({
-  contractorId,
+  contractorId: _contractorId,
   contractorName,
   entries,
   hourlyRate = 45,
   onClose,
   isModal = false,
 }: TimesheetViewProps) {
+  void _contractorId; // Reserved for API calls
   const [selectedPeriod, setSelectedPeriod] = useState('this-week');
 
   const weekTotal = entries.reduce((sum, e) => sum + e.hours, 0);
