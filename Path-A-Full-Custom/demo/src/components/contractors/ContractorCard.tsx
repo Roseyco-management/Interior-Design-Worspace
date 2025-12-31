@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-interface Contractor {
+export interface Contractor {
   id: string;
   name: string;
   email: string;

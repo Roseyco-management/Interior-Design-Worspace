@@ -2,7 +2,7 @@
 
 import PageWrapper from '@/components/common/PageWrapper';
 import { KPIBar } from '@/components/common/KPIBar';
-import { ContractorCard } from '@/components/contractors/ContractorCard';
+import { ContractorCard, Contractor } from '@/components/contractors/ContractorCard';
 import { AddContractorModal } from '@/components/contractors/AddContractorModal';
 import { AssignJobModal } from '@/components/contractors/AssignJobModal';
 import { TimesheetView } from '@/components/contractors/TimesheetView';
@@ -34,7 +34,7 @@ const CurrencyDollarIcon = () => (
 );
 
 // Mock Data
-const mockContractors = [
+const mockContractors: Contractor[] = [
   {
     id: 'con1',
     name: 'Mike Rodriguez',
@@ -119,7 +119,7 @@ export default function ContractorsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filterSpecialty, setFilterSpecialty] = useState<Specialty>('All');
   const [showAddModal, setShowAddModal] = useState(false);
-  const [selectedContractor, setSelectedContractor] = useState<typeof mockContractors[0] | null>(null);
+  const [selectedContractor, setSelectedContractor] = useState<Contractor | null>(null);
   const [showAssignModal, setShowAssignModal] = useState(false);
   const [showTimesheetModal, setShowTimesheetModal] = useState(false);
 
@@ -132,12 +132,12 @@ export default function ContractorsPage() {
 
   const specialties: Specialty[] = ['All', 'Installer', 'Painter', 'Electrician', 'Plumber', 'Carpenter', 'General'];
 
-  const handleAssignJob = (contractor: typeof mockContractors[0]) => {
+  const handleAssignJob = (contractor: Contractor) => {
     setSelectedContractor(contractor);
     setShowAssignModal(true);
   };
 
-  const handleViewTimesheet = (contractor: typeof mockContractors[0]) => {
+  const handleViewTimesheet = (contractor: Contractor) => {
     setSelectedContractor(contractor);
     setShowTimesheetModal(true);
   };
